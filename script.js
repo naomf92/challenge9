@@ -10,15 +10,19 @@ const picArray = [
 {src: './images/pic_6.jpg', title: 'pic6'}
 ];
 
-
 //スライドショーが再生中かどうかを記録しておくためのグローバル変数
 let playingID = 0;
 
 //写真を切り替える関数
 //関数名「changePicture」
 function changePicture() {
-
+     if( == ) {
+        document.getElementById('pics').src = './images/pic_1.jpg';
+        document.getElementById('pic-title').innerHTML = picArray[0].title
+    } 
+    
 }
+setInterval(function() {changePicture();}, 2000);
 
 // ボタンを押してスライドショーを再生・停止する関数
 //関数名「playSlidedeshow」
