@@ -23,18 +23,35 @@ let counter = 0;
 function changePicture() {
     // 上記で用意をしたカウンター変数と配列を条件式に利用します
     // ヒント: 配列の中身の数を把握すると、画像が最後の枚数に達するまで、と表現ができます。値の中身の数を把握するメソッドに.lengthがあるので、使用すると良さそうです
-    
-    for(let counter=0; counter<=picArray.length; counter++)
+
+    counter<=picArray.length;
+    counter++;
+    console.log(counter);
     
     if(counter == 1) {
         document.getElementById('pics').src = './images/pic_1.jpg';
         document.getElementById('pic-title').innerHTML = picArray[0].title  
-    } else if (counter == 2) {
+    } else if(counter == 2) {
         document.getElementById('pics').src = './images/pic_2.jpg';
         document.getElementById('pic-title').innerHTML = picArray[1].title
-    } 
+    } else if(counter == 3) {
+        document.getElementById('pics').src = './images/pic_3.jpg';
+        document.getElementById('pic-title').innerHTML = picArray[2].title
+    } else if(counter == 4) {
+        document.getElementById('pics').src = './images/pic_4.jpg';
+        document.getElementById('pic-title').innerHTML = picArray[3].title
+    } else if(counter == 5) {
+        document.getElementById('pics').src = './images/pic_5.jpg';
+        document.getElementById('pic-title').innerHTML = picArray[4].title
+    } else if(counter == 6) {
+        document.getElementById('pics').src = './images/pic_6.jpg';
+        document.getElementById('pic-title').innerHTML = picArray[5].title
+    } else {
+        
+    }
+
 }
-// setInterval(function() {changePicture();}, 2000);
+setInterval(function() {changePicture();}, 2000);
 
 
 // ボタンを押してスライドショーを再生・停止する関数
