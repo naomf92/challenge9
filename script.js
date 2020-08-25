@@ -24,38 +24,28 @@ function changePicture() {
     // 上記で用意をしたカウンター変数と配列を条件式に利用します
     // ヒント: 配列の中身の数を把握すると、画像が最後の枚数に達するまで、と表現ができます。値の中身の数を把握するメソッドに.lengthがあるので、使用すると良さそうです
 
-    counter<=picArray.length;
-    counter++;
-    console.log(counter);
+    // 画像の枚数が1万枚増えた時にでも対応できる、再利用性のあるコードに変更しましょう
+    // つまり、手書きでsrc属性を指定するのではなく、counter変数でカウントさせると良さそうです。そのためのカウンター変数です
     
-    if(counter == 1) {
-        document.getElementById('pics').src = './images/pic_1.jpg';
-        document.getElementById('pic-title').innerHTML = picArray[0].title  
-    } else if(counter == 2) {
-        document.getElementById('pics').src = './images/pic_2.jpg';
-        document.getElementById('pic-title').innerHTML = picArray[1].title
-    } else if(counter == 3) {
-        document.getElementById('pics').src = './images/pic_3.jpg';
-        document.getElementById('pic-title').innerHTML = picArray[2].title
-    } else if(counter == 4) {
-        document.getElementById('pics').src = './images/pic_4.jpg';
-        document.getElementById('pic-title').innerHTML = picArray[3].title
-    } else if(counter == 5) {
-        document.getElementById('pics').src = './images/pic_5.jpg';
-        document.getElementById('pic-title').innerHTML = picArray[4].title
-    } else if(counter == 6) {
-        document.getElementById('pics').src = './images/pic_6.jpg';
-        document.getElementById('pic-title').innerHTML = picArray[5].title
+    if(counter <= picArray.length) {
+        document.getElementById('pics').src = picArray[counter].src
+        document.getElementById('pic-title').innerHTML = picArray[counter].title 
+        counter++;
     } else {
-        
+        // document.getElementById('pics').src = picArray[counter].src
+        // document.getElementById('pic-title').innerHTML = picArray[counter].title 
     }
 
 }
-setInterval(function() {changePicture();}, 2000);
+//setInterval(function() {changePicture();}, 2000); 
+// するとsrc属性の値がnullだと言うエラーが出るので、そちらの修正を先にしなければならない方向性が見えてきます
+changePicture();
 
 
 // ボタンを押してスライドショーを再生・停止する関数
 //関数名「playSlidedeshow」
+
 function playSlideshow() {
-    
+
 }
+
