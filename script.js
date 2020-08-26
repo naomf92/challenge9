@@ -27,13 +27,13 @@ function changePicture() {
     // 画像の枚数が1万枚増えた時にでも対応できる、再利用性のあるコードに変更しましょう
     // つまり、手書きでsrc属性を指定するのではなく、counter変数でカウントさせると良さそうです。そのためのカウンター変数です
     
-    if(counter <= picArray.length) {
-        document.getElementById('pics').src = picArray[counter].src
-        document.getElementById('pic-title').innerHTML = picArray[counter].title 
+    if(counter < picArray.length) {
+        document.getElementById('pics').src = picArray[0].src
+        document.getElementById('pic-title').innerHTML = picArray[0].title 
         counter++;
     } else {
-        // document.getElementById('pics').src = picArray[counter].src
-        // document.getElementById('pic-title').innerHTML = picArray[counter].title 
+        document.getElementById('pics').src = 
+        document.getElementById('pic-title').innerHTML = 
     }
 
 }
