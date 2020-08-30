@@ -31,6 +31,7 @@ function changePicture() {
         document.getElementById('pics').src = picArray[counter].src
         document.getElementById('pic-title').innerHTML = picArray[counter].title 
         counter++;
+        console.log(counter)
     } else {
         document.getElementById('pics').src = picArray[0].src
         document.getElementById('pic-title').innerHTML = picArray[0].title
@@ -38,14 +39,19 @@ function changePicture() {
 
 }
 //setInterval(function() {changePicture();}, 2000); 
-// するとsrc属性の値がnullだと言うエラーが出るので、そちらの修正を先にしなければならない方向性が見えてきます
-changePicture();
+//changePicture();
 
 
 // ボタンを押してスライドショーを再生・停止する関数
 //関数名「playSlidedeshow」
 
+playingID = setInterval(changePicture,2000);
+
 function playSlideshow() {
-
+    if() {
+        clearInterval(playingID);
+    } else {
+        document.getElementById('playButton').innerHTML = 'STOP';
+    }
 }
-
+playSlideshow();
