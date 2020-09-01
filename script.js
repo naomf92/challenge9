@@ -35,23 +35,28 @@ function changePicture() {
     } else {
         document.getElementById('pics').src = picArray[0].src
         document.getElementById('pic-title').innerHTML = picArray[0].title
+        counter = 1;
     }
 
 }
 //setInterval(function() {changePicture();}, 2000); 
 //changePicture();
 
-
 // ボタンを押してスライドショーを再生・停止する関数
 //関数名「playSlidedeshow」
 
-playingID = setInterval(changePicture,2000);
-
 function playSlideshow() {
-    if() {
-        clearInterval(playingID);
-    } else {
+    if(playingID == 0) {//再生中
+        // setIntervalをclearIntervalと対にすると良さそうです
+        playingID = setInterval(changePicture,2000);
         document.getElementById('playButton').innerHTML = 'STOP';
+        console.log(playingID);
+        // こちらにもボタンにPLAY、もしくはSTOPの表示が必要になりそうですね
+    } else {//停止中
+        clearInterval(playingID);
+        playingID = 0;
+        document.getElementById('playButton').innerHTML = 'PLAY';
+        console.log(playingID);
     }
 }
-playSlideshow();
+
